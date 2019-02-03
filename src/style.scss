@@ -1,0 +1,141 @@
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+
+    // TODO: Eventually remove. Just for development/demo purposes.
+    background: #ccc;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+.pwa {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 100;
+
+    &--showing-page {
+        background: rgba(#fff, 0.4);
+    }
+
+    &__content {
+        max-width: 1024px;
+        width: 100%;
+    }
+
+    .page-container {
+        background: #fff;
+        height: 100%;
+    }
+
+    .page-header {
+        background: violet;
+        color: #fff;
+        display: flex;
+        font-size: 2rem;
+        line-height: 1.5;
+        padding: 0.25em;
+
+        &__title {
+            flex: 1;
+        }
+
+        &__close-button {
+            background: transparent;
+            border: 0;
+            color: inherit;
+            cursor: pointer;
+            font-size: inherit;
+            width: 1.5em;
+        }
+    }
+
+    .page-content {
+        overflow-y: auto;
+    }
+
+    .sticky-menu {
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        left: 0;
+        position: fixed;
+        width: 100%;
+
+        button {
+            border: 0;
+            border-radius: 100%;
+            cursor: pointer;
+            line-height: 2em;
+            margin: 0;
+            outline: none;
+            padding: 0;
+            transition: all ease 400ms;
+            width: 2em;
+
+            &:active,
+            &:focus,
+            &:hover {
+                box-shadow: 0 0 1rem #000;
+            }
+        }
+
+        .main-button {
+            background: violet;
+            color: #fff;
+            font-size: 4rem;
+            position: relative;
+            top: 0;
+        }
+
+        &--is-closed {
+
+            .main-button {
+                color: violet;
+                top: 1em;
+            }
+        }
+
+        .page-button {
+            justify-content: center;
+            display: flex;
+            font-size: 2rem;
+            position: fixed;
+            bottom: 12rem;
+        }
+    }
+}
